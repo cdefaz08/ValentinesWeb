@@ -60,24 +60,51 @@
             color: red;
             animation: falling-hearts 4s linear infinite;
         }
-
+        .letter {
+            position: absolute;
+            bottom: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 80px;
+            background-color: #ff66b2;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 24px;
+            color: white;
+            padding-top: 25px;
+            cursor: pointer;
+            transition: all 1.5s ease-in-out;
+        }
+        .letter.open {
+            bottom: 50%;
+            width: 200px;
+            height: 150px;
+            background-color: #ff4081;
+        }
     </style>
 </head>
 <body>
     <h1>Feliz Dia de San Valentin 🥰❤️</h1>
     <p class="message">Este es un pequeño gesto para mostrarte que te amo 💖</p>
     <div class="heart">❤️</div>
-    <button class="button" onclick="showMessage()">Dale Click para una sorpresa 😘</button>
+    <button class="button" onclick="showLetter()">Dale Click para una sorpresa 😘</button>
+    <div id="letter" class="letter" onclick="openLetter()">💌</div>
     <p id="hiddenMessage" class="hidden-message">Te amo mas de lo que te puedas imaginar. Eres lo mas importante en mi vida 💖</p>
     <div id="hiddenImage" class="hidden-image">
         <img src="pic.jpg" alt="">
     </div>
     <script>
-        function showSurprise() {
+        function showLetter() {
+            document.getElementById('letter').style.bottom = '50%';
+        }
+        function openLetter() {
+            let letter = document.getElementById('letter');
+            letter.classList.add('open');
             document.getElementById('hiddenMessage').style.display = 'block';
             document.getElementById('hiddenImage').style.display = 'block';
-        }
-
+            setTimeout(() => { letter.style.display = 'none'; }, 1000);
+e        }
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart-animation');
