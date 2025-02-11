@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f2;
+            color: #d63384;
+        }
+        h1 {
+            margin-top: 50px;
+        }
+        .message {
+            font-size: 20px;
+            margin: 20px auto;
+            width: 60%;
+        }
+        .heart {
+            font-size: 50px;
+            color: red;
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        .button {
+            background-color: #ff66b2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .hidden-message, .hidden-image {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+        .hidden-image img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Feliz Dia de San Valentin 🥰❤️</h1>
+    <p class="message">Este es un pequeño gesto para mostrarte que te amo 💖</p>
+    <div class="heart">❤️</div>
+    <button class="button" onclick="showMessage()">Dale Click para una sorpresa 😘</button>
+    <p id="hiddenMessage" class="hidden-message">Te amo mas de lo que te puedas imaginar. Eres lo mas importante en mi vida 💖</p>
+    <div id="hiddenImage" class="hidden-image">
+        <img src="pic.jpg" alt="">
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            document.getElementById('hiddenImage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
